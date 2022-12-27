@@ -78,33 +78,31 @@ import Component from '@glimmer/component';
 import { loadFull } from 'tsparticles';
 import Particles from 'ember-tsparticles/components/particles';
 
-export default class ExampleComponent extends Component {
-  options = {
-    particles: {
-      color: {
-        value: '#000',
-      },
-      links: {
-        enable: true,
-        color: '#000',
-      },
-      move: {
-        enable: true,
-      },
+const options = {
+  particles: {
+    color: {
+      value: '#000',
     },
-  };
+    links: {
+      enable: true,
+      color: '#000',
+    },
+    move: {
+      enable: true,
+    },
+  },
+};
 
-  async particlesInit(engine) {
-    await loadFull(engine);
-  }
+const particlesInit = async (engine) => {
+  await loadFull(engine);
+};
 
-  <template>
-    <Particles
-      @options={{this.options}}
-      @particlesInit={{this.particlesInit}}
-    />
-  </template>
-}
+<template>
+  <Particles
+    @options={{options}}
+    @particlesInit={{particlesInit}}
+  />
+</template>
 ```
 
 ### Using presets
