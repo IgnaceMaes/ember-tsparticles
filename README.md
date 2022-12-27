@@ -74,7 +74,6 @@ export default class ExampleComponent extends Component {
 When using [ember-template-imports](https://github.com/ember-template-imports/ember-template-imports) the example above would look like this, using the `.gjs` file extension.
 
 ```js
-import Component from '@glimmer/component';
 import { loadFull } from 'tsparticles';
 import Particles from 'ember-tsparticles/components/particles';
 
